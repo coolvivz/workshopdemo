@@ -1,0 +1,16 @@
+namespace HANA;
+
+context CDS_TEST {
+     entity SBOOK {
+     key CARRID : String(3);
+     CONNID  :String(4);
+     };
+     
+     view CDS_TEST_VIEW as 
+     select from SBOOK{
+       CARRID,
+       CONNID
+     }
+     with structured privilege check;
+    };
+
