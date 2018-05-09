@@ -29,23 +29,43 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="FLDATE" source="FLDATE"/>
     </input>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT">
+        <descriptions defaultDescription="MANDT"/>
+      </viewAttribute>
+      <viewAttribute id="CARRID">
+        <descriptions defaultDescription="CARRID"/>
+      </viewAttribute>
+      <viewAttribute id="FLDATE">
+        <descriptions defaultDescription="FLDATE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARRID" source="CARRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLDATE" source="FLDATE"/>
+    </input>
+  </calculationView>
 </calculationViews>
-<logicalModel id="Projection_1">
+<logicalModel id="Projection_2">
   <attributes>
     <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MANDT"/>
-      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+      <keyMapping columnObjectName="Projection_2" columnName="MANDT"/>
     </attribute>
     <attribute id="CARRID" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CARRID"/>
-      <keyMapping columnObjectName="Projection_1" columnName="CARRID"/>
+      <keyMapping columnObjectName="Projection_2" columnName="CARRID"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="FLDATE" order="3" aggregationType="count" measureType="simple">
       <descriptions defaultDescription="FLDATE"/>
-      <measureMapping columnObjectName="Projection_1" columnName="FLDATE"/>
+      <measureMapping columnObjectName="Projection_2" columnName="FLDATE"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures/>
@@ -60,6 +80,11 @@
   
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="100" y="186"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="152"/>
       <rectangleSize height="30" width="140"/>
     </shape>
   </shapes>
